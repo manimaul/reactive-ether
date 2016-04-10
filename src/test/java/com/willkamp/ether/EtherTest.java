@@ -342,7 +342,7 @@ public class EtherTest {
     }
 
     private SignalResult whenAnItemIsObserved(Observable<TestResource> observable, int timeoutSeconds) throws Exception {
-        CountDownLatch latch = new CountDownLatch(1);
+        final CountDownLatch latch = new CountDownLatch(1);
         final SignalResult signalResult = new SignalResult();
         observable.subscribe(new Observer<TestResource>() {
             @Override

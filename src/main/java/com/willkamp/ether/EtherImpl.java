@@ -3,6 +3,7 @@ package com.willkamp.ether;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.functions.Func1;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -124,7 +125,7 @@ class EtherImpl {
         addItem(key, item, RetainPolicy.ONCE_OBSERVED);
     }
 
-    <T> Observable<T> observeResourceWithKey(String key) {
+    <T> Observable<T> observeResourceWithKey(final String key) {
         return Observable.create(new Observable.OnSubscribe<Resource>() {
             @Override
             public void call(Subscriber<? super Resource> subscriber) {
@@ -136,9 +137,12 @@ class EtherImpl {
                     addSubscriber(key, subscriber);
                 }
             }
-        }).map(resource -> {
-            //noinspection unchecked
-            return (T) resource._resource;
+        }).map(new Func1<Resource, T>() {
+            @Override
+            public T call(Resource resource) {
+                //noinspection unchecked
+                return (T) resource._resource;
+            }
         });
     }
 }

@@ -9,7 +9,7 @@ plugins {
 }
 
 ext {
-    etherVersion = "0.1"
+    etherVersion = "0.2"
 }
 
 group 'Ether'
@@ -18,6 +18,9 @@ version "${etherVersion}"
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 repositories {
     jcenter()
