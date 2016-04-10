@@ -1,0 +1,6 @@
+{
+  "name": "Reactive-ether",
+  "tagline": "The reactive ether library",
+  "body": "#Reactive-Ether library\r\n####Broadcast and observe (share) resource objects\r\n\r\nReactive-Ether was created to easily share / persist non-serializable objects between Android\r\n[Activities](http://developer.android.com/reference/android/app/Activity.html) and\r\n[Fragments](http://developer.android.com/reference/android/app/Fragment.html) where serializing resources in the\r\n[Bundle](http://developer.android.com/reference/android/os/Bundle.html) is the standard mechanism during device\r\nconfiguration changes and Fragment/Activity communication.\r\n\r\n[JavaDocs](https://raw.githubusercontent.com/manimaul/reactive-ether/master/docs/index.html)\r\n\r\n####Gradle\r\n\r\n```gradle\r\n\r\nallprojects {\r\n    repositories {\r\n        jcenter()\r\n        maven {\r\n            url  \"http://dl.bintray.com/manimaul/maven\"\r\n        }\r\n    }\r\n}\r\n\r\n\r\ndependencies {\r\n    compile 'com.willkamp.ether:reactive-ether:0.4'\r\n    compile 'io.reactivex:rxjava:1.1.0'\r\n    compile 'io.reactivex:rxandroid:1.1.0'\r\n}\r\n\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

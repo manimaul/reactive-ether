@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Reactive-ether by manimaul</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/manimaul/reactive-ether">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/manimaul/reactive-ether/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/manimaul/reactive-ether/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Reactive-ether</h1>
+          <p>The reactive ether library</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/manimaul">manimaul</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="reactive-ether-library" class="anchor" href="#reactive-ether-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reactive-Ether library</h1>
+
+<h4>
+<a id="broadcast-and-observe-share-resource-objects" class="anchor" href="#broadcast-and-observe-share-resource-objects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Broadcast and observe (share) resource objects</h4>
+
+<p>Reactive-Ether was created to easily share / persist non-serializable objects between Android
+<a href="http://developer.android.com/reference/android/app/Activity.html">Activities</a> and
+<a href="http://developer.android.com/reference/android/app/Fragment.html">Fragments</a> where serializing resources in the
+<a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> is the standard mechanism during device
+configuration changes and Fragment/Activity communication.</p>
+
+<p><a href="https://raw.githubusercontent.com/manimaul/reactive-ether/master/docs/index.html">JavaDocs</a></p>
+
+<h4>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h4>
+
+<div class="highlight highlight-source-groovy-gradle"><pre>
+<span class="pl-en">allprojects</span> {
+    repositories {
+        jcenter()
+        maven {
+            url  <span class="pl-s"><span class="pl-pds">"</span>http://dl.bintray.com/manimaul/maven<span class="pl-pds">"</span></span>
+        }
+    }
+}
+
+
+<span class="pl-en">dependencies</span> {
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.willkamp.ether:reactive-ether:0.4<span class="pl-pds">'</span></span>
+    compile <span class="pl-s"><span class="pl-pds">'</span>io.reactivex:rxjava:1.1.0<span class="pl-pds">'</span></span>
+    compile <span class="pl-s"><span class="pl-pds">'</span>io.reactivex:rxandroid:1.1.0<span class="pl-pds">'</span></span>
+}
+</pre></div>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
