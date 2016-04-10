@@ -6,3 +6,27 @@ Reactive-Ether was created to easily share / persist non-serializable objects be
 [Fragments](http://developer.android.com/reference/android/app/Fragment.html) where serializing resources in the
 [Bundle](http://developer.android.com/reference/android/os/Bundle.html) is the standard mechanism during device
 configuration changes and Fragment/Activity communication.
+
+[JavaDocs](https://raw.githubusercontent.com/manimaul/reactive-ether/master/docs/index.html)
+
+####Gradle
+
+```gradle
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url  "http://dl.bintray.com/manimaul/maven"
+        }
+    }
+}
+
+
+dependencies {
+    compile 'com.willkamp.ether:reactive-ether:0.4'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+}
+
+```
