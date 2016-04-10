@@ -92,7 +92,17 @@ public class Ether {
     }
 
     /**
-     * Get a n item with a particular key.
+     * Create a unique key for storing resources.
+     *
+     * @return a unique key.
+     */
+    public static String createUniqueKey() {
+        return __etherImpl.createUniqueKey();
+    }
+
+    /**
+     * Get an item with a particular key.
+     *
      * @param key the item's key.
      * @param <T> the item's type.
      * @return the item or null if it does not exist.

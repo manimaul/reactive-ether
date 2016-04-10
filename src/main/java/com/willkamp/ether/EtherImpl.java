@@ -17,10 +17,6 @@ class EtherImpl {
     EtherImpl() {
     }
 
-    private String generateKey() {
-        return UUID.randomUUID().toString();
-    }
-
     private synchronized void removeItem(String key) {
         _itemStore.remove(key);
         _subscriberHashMap.remove(key);
@@ -96,7 +92,7 @@ class EtherImpl {
     //endregion
 
     String holdForTime(Object item, TimeUnit timeUnit, long time) {
-        String key = generateKey();
+        String key = createUniqueKey();
         holdForTime(key, item, timeUnit, time);
         return key;
     }
@@ -106,7 +102,7 @@ class EtherImpl {
     }
 
     String hold(Object item) {
-        String key = generateKey();
+        String key = createUniqueKey();
         hold(key, item);
         return key;
     }
@@ -116,7 +112,7 @@ class EtherImpl {
     }
 
     String holdUntilObserved(Object item) {
-        String key = generateKey();
+        String key = createUniqueKey();
         holdUntilObserved(key, item);
         return key;
     }
@@ -149,5 +145,9 @@ class EtherImpl {
     <T> T getResourceWithKey(String key) {
         //noinspection unchecked
         return (T) getItem(key)._resource;
+    }
+
+    String createUniqueKey() {
+        return UUID.randomUUID().toString();
     }
 }
