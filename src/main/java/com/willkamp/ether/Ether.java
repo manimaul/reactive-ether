@@ -90,4 +90,14 @@ public class Ether {
     public static <T> Observable<T> getResourceObservable(String key) {
         return __etherImpl.observeResourceWithKey(key);
     }
+
+    /**
+     * Get a n item with a particular key.
+     * @param key the item's key.
+     * @param <T> the item's type.
+     * @return the item or null if it does not exist.
+     */
+    public static <T> T getResourceWithKey(String key) {
+        return __etherImpl.getResourceWithKey(key);
+    }
 }

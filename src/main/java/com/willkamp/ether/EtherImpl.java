@@ -145,4 +145,9 @@ class EtherImpl {
             }
         });
     }
+
+    <T> T getResourceWithKey(String key) {
+        //noinspection unchecked
+        return (T) getItem(key)._resource;
+    }
 }
