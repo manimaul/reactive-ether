@@ -9,7 +9,7 @@ plugins {
 }
 
 ext {
-    etherVersion = "0.3"
+    etherVersion = "0.4"
 }
 
 group 'Ether'
@@ -45,9 +45,12 @@ publishing {
     }
 }
 
-task printVersion {
-    println "Version:"
-    println "${etherVersion}"
+task docs {
+    javadoc.execute()
+    File buildDocsDir = new File(project.rootDir.absolutePath + "/build/docs/")
+    File docsDir = new File(project.rootDir.absolutePath + "/docs/")
+    docsDir.deleteDir()
+    buildDocsDir.renameTo(project.rootDir.absolutePath + "/docs/");
 }
 
 bintray {
@@ -59,7 +62,6 @@ bintray {
     dryRun = false //Whether to run this as dry-run, without deploying
     publish = true //If version should be auto published after an upload
     pkg {
-        //https://dl.bintray.com/manimaul/maven
         repo = 'maven'
         name = 'reactive-ether'
         licenses = ['BSD Simplified']
