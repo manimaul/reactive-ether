@@ -55,7 +55,7 @@ public class MyActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(CONTROLLER_KEY, Ether.hold(_myActivityController));
+        Ether.hold(CONTROLLER_KEY, _myActivityController);
     }
 }
 ```
