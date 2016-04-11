@@ -7,7 +7,7 @@ Reactive-Ether was created to easily share / persist non-serializable objects be
 [Bundle](http://developer.android.com/reference/android/os/Bundle.html) is the standard mechanism during device
 configuration changes and Fragment/Activity communication.
 
-[JavaDocs](https://raw.githubusercontent.com/manimaul/reactive-ether/master/docs/index.html)
+[JavaDocs](http://manimaul.github.io/reactive-ether/docs/javadoc/com/willkamp/ether/Ether.html)
 
 ####Gradle
 
