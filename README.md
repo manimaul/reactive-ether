@@ -30,3 +30,32 @@ dependencies {
 }
 
 ```
+
+####Simple example persisting a resource during an Activity configuration change
+
+```java
+public class MyActivity extends AppCompatActivity {
+
+    private static final String CONTROLLER_KEY = Ether.createUniqueKey();
+
+    private MyActivityController _myActivityController;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null && savedInstanceState.containsKey(CONTROLLER_KEY)) {
+            _myActivityController = Ether.getResourceWithKey(savedInstanceState.getString(CONTROLLER_KEY));
+        } else {
+            _myActivityController = new MyActivityController();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(CONTROLLER_KEY, Ether.hold(_myActivityController));
+    }
+}
+```
